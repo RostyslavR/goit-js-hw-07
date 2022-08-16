@@ -2,10 +2,10 @@ import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 let instance;
 const refGallery = document.querySelector(".gallery");
-const keyListenner = window.addEventListener("keydown", onKeyPressed);
 
 const galleryMarkUp = galleryItems.map(makeGalleryItem).join("");
 refGallery.innerHTML = galleryMarkUp;
+
 refGallery.addEventListener("click", onGalleryClick);
 
 function makeGalleryItem(item) {
@@ -20,6 +20,7 @@ function makeGalleryItem(item) {
   </a>
 </div>`;
 }
+
 function onGalleryClick(event) {
   event.preventDefault();
 
@@ -32,6 +33,7 @@ function onGalleryClick(event) {
   instance.show();
   addKeyListenner();
 }
+
 function makeBackDrop(image) {
   instance = basicLightbox.create(`<img src="${image}">`);
 }
@@ -43,9 +45,11 @@ function onKeyPressed(event) {
   removeKeyListenner();
   instance.close();
 }
+
 function addKeyListenner() {
   window.addEventListener("keydown", onKeyPressed);
 }
+
 function removeKeyListenner() {
   window.removeEventListener("keydown", onKeyPressed);
 }
