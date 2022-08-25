@@ -1,6 +1,6 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
-let instance;
+let instance = null;
 const refGallery = document.querySelector(".gallery");
 
 const galleryMarkUp = galleryItems.map(makeGalleryItem).join("");
